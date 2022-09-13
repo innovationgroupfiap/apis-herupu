@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="20dp"
+    android:paddingTop="20dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="20dp"
+    android:background="#fdeefd"
+    tools:context=".AtividadeActivity">
+
+    <TextView
+        android:id="@+id/txv_herupu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Herupu"
+        android:textColor="#44012c"
+        android:textSize="50sp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toTopOf="@+id/txv_herupu"
+        app:layout_constraintBottom_toBottomOf="@+id/txv_herupu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/_png" />
+
+    <ImageView
+        android:id="@+id/img_seta_volta"
+        android:layout_width="38dp"
+        android:layout_height="37dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/txv_herupu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txv_herupu"
+        app:srcCompat="@drawable/seta_volta" />
+
+    <TextView
+        android:id="@+id/txv_descricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ESCREVA O NOME DO ANIMAL ABAIXO DE SUA IMAGEM"
+        android:textColor="#44012c"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/txv_herupu"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/edt_numb"
+        android:layout_width="48dp"
+        android:layout_height="50dp"
+        android:text="0/4"
+        android:textSize="30sp"
+        android:textColor="#44012c"
+        android:layout_marginBottom="44dp"
+        app:layout_constraintTop_toBottomOf="@+id/txv_descricao"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/txv_descricao"
+        app:layout_constraintStart_toStartOf="@+id/txv_descricao" />
+
+    <ImageView
+        android:id="@+id/img_cachorro"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_numb"
+        app:srcCompat="@drawable/cachorro" />
+
+    <EditText
+        android:id="@+id/edt_img_1"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:hint="Digite Aqui"
+        android:textColorHint="#44012c"
+        android:backgroundTint="#44012c"
+        app:layout_constraintTop_toBottomOf="@+id/img_cachorro"
+        app:layout_constraintStart_toStartOf="@id/img_cachorro"
+        app:layout_constraintEnd_toEndOf="@id/img_cachorro" />
+
+    <ImageView
+        android:id="@+id/img_onca"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:layout_constraintTop_toTopOf="@+id/img_cachorro"
+        app:layout_constraintBottom_toBottomOf="@+id/img_cachorro"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        app:srcCompat="@drawable/onca" />
+
+    <EditText
+        android:id="@+id/edt_img_2"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:hint="Digite Aqui"
+        android:textColorHint="#44012c"
+        android:backgroundTint="#44012c"
+        app:layout_constraintTop_toBottomOf="@+id/img_onca"
+        app:layout_constraintStart_toStartOf="@id/img_onca"
+        app:layout_constraintEnd_toEndOf="@id/img_onca" />
+
+    <ImageView
+        android:id="@+id/img_tucano"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="50dp"
+        android:adjustViewBounds="false"
+        android:scaleY="1.1"
+        app:layout_constraintEnd_toEndOf="@+id/img_cachorro"
+        app:layout_constraintStart_toStartOf="@id/img_cachorro"
+        app:layout_constraintTop_toBottomOf="@+id/img_cachorro"
+        app:srcCompat="@drawable/tucano" />
+
+    <EditText
+        android:id="@+id/edt_img_3"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:hint="Digite Aqui"
+        android:textColorHint="#44012c"
+        android:backgroundTint="#44012c"
+        app:layout_constraintTop_toBottomOf="@+id/img_tucano"
+        app:layout_constraintStart_toStartOf="@id/img_tucano"
+        app:layout_constraintEnd_toEndOf="@id/img_tucano" />
+
+    <ImageView
+        android:id="@+id/img_urso"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:layout_constraintTop_toTopOf="@+id/img_tucano"
+        app:layout_constraintBottom_toBottomOf="@+id/img_tucano"
+        app:layout_constraintStart_toStartOf="@id/img_onca"
+        app:layout_constraintEnd_toEndOf="@id/img_onca"
+        app:srcCompat="@drawable/urso" />
+
+    <EditText
+        android:id="@+id/edt_img_4"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:hint="Digite Aqui"
+        android:textColorHint="#44012c"
+        android:backgroundTint="#44012c"
+        app:layout_constraintTop_toBottomOf="@+id/img_urso"
+        app:layout_constraintStart_toStartOf="@id/img_urso"
+        app:layout_constraintEnd_toEndOf="@id/img_urso" />
+
+    <Button
+        android:id="@+id/btn_prox"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Próximo"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/edt_img_3"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="#44012c" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
