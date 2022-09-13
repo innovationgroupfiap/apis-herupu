@@ -15,10 +15,10 @@ namespace Herupu.DAO.Repositorios
             context = new DataBaseContext();
         }
 
-        public IList<AtividadeItem> Listar()
+        public IList<AtividadeItem> Listar(int idAtividade)
         {
             return context.AtividadeItem
-                .Include("Atividade")
+                .Where(o => o.IdAtividade == idAtividade)
                 .ToList();
         }
 

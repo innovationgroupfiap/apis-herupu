@@ -21,7 +21,9 @@ namespace Herupu.DAL.Context
             if (!optionsBuilder.IsConfigured)
             {
                 var config = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
-                optionsBuilder.UseSqlServer(config.GetConnectionString("FiapDbConnection"));
+                string connectionString = config.GetConnectionString("HerupuDbConnection").ToString();
+
+                optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), null);
             }
         }
 
