@@ -14,13 +14,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import okhttp3.Dispatcher
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var listaFeedbacks: MutableList<FeedbackAtividade>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        carregarDados()
         setContentView(R.layout.activity_home)
 
         val btnQuest1 = findViewById<TextView>(R.id.btn_qst1)
@@ -95,8 +95,10 @@ class HomeActivity : AppCompatActivity() {
                 listaFeedbacks = mutableListOf()
                 result.forEach{listaFeedbacks.add((it))}
 
-                withContext(Dispatchers.Main){
+                val btnQuest1 = findViewById<TextView>(R.id.btn_qst1)
 
+                withContext(Dispatchers.Main){
+                    btnQuest1.setText("Escreva o nome")
                 }
             } catch (e: Exception) {
                 Log.i("EVENTO_API", "retornoApi: + ${e.message}")
