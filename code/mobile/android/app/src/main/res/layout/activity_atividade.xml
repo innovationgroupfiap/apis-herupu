@@ -75,7 +75,7 @@
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_numb"
-        app:srcCompat="@drawable/cachorro" />
+        app:srcCompat="@drawable/sapo" />
 
     <EditText
         android:id="@+id/edt_img_1"
@@ -96,7 +96,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/img_cachorro"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="15dp"
-        app:srcCompat="@drawable/onca" />
+        app:srcCompat="@drawable/cachorro" />
 
     <EditText
         android:id="@+id/edt_img_2"
@@ -140,7 +140,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/img_tucano"
         app:layout_constraintStart_toStartOf="@id/img_onca"
         app:layout_constraintEnd_toEndOf="@id/img_onca"
-        app:srcCompat="@drawable/urso" />
+        app:srcCompat="@drawable/tigre" />
 
     <EditText
         android:id="@+id/edt_img_4"

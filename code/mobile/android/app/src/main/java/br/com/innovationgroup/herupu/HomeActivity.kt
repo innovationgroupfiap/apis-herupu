@@ -3,11 +3,22 @@ package br.com.innovationgroup.herupu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import br.com.innovationgroup.herupu.model.FeedbackAtividade
+import br.com.innovationgroup.herupu.network.FeedbackApi
+import br.com.innovationgroup.herupu.network.RetrofitHelper
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.Dispatcher
 
 class HomeActivity : AppCompatActivity() {
+    private lateinit var listaFeedbacks: MutableList<FeedbackAtividade>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -74,5 +85,23 @@ class HomeActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+    }
+
+    private fun carregarDados(){
+        CoroutineScope(Dispatchers.IO).launch() {
+            try {
+                val result = RetrofitHelper.getInstance().create(FeedbackApi::class.java).getFeedbacks()
+                Log.i("EVENTO_API", "retornoApi: Sucesses: ${result.size} registros recuperados")
+                listaFeedbacks = mutableListOf()
+                result.forEach{listaFeedbacks.add((it))}
+
+                withContext(Dispatchers.Main){
+
+                }
+            } catch (e: Exception) {
+                Log.i("EVENTO_API", "retornoApi: + ${e.message}")
+            }
+
+        }
     }
 }
