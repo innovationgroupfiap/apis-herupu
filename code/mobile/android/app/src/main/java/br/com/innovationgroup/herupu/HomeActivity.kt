@@ -4,8 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.ContextThemeWrapper
 import android.view.View
 import android.widget.Button
+import android.widget.GridLayout
+import android.widget.LinearLayout
 import android.widget.TextView
 import br.com.innovationgroup.herupu.model.FeedbackAtividade
 import br.com.innovationgroup.herupu.network.FeedbackApi
@@ -23,47 +26,77 @@ class HomeActivity : AppCompatActivity() {
         carregarDados()
         setContentView(R.layout.activity_home)
 
-        val btnQuest1 = findViewById<TextView>(R.id.btn_qst1)
-        val btnQuest2 = findViewById<TextView>(R.id.btn_qst2)
-        val btnQuest3 = findViewById<TextView>(R.id.btn_qst3)
-        val btnQuest4 = findViewById<TextView>(R.id.btn_qst4)
-        val btnQuest5 = findViewById<TextView>(R.id.btn_qst5)
-        val btnQuest6 = findViewById<TextView>(R.id.btn_qst6)
+        val btnsNames = ArrayList<String>();
+        btnsNames.add("Atividade 1");
+        btnsNames.add("Atividade 2");
+        btnsNames.add("Atividade 3");
+        btnsNames.add("Atividade 4");
+
+        val gridbtns = findViewById<GridLayout>(R.id.grid_atividades);
+
+        val layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.MATCH_PARENT
+        )
+        layoutParams.marginEnd =10;
+        layoutParams.marginStart =10;
+        layoutParams.topMargin =10;
+        layoutParams.bottomMargin =10;
+        layoutParams.height = 300;
+        layoutParams.width=300;
+
+        for (i in 0 until btnsNames.size) {
+            val newButton = Button(this)
+            newButton.setText(btnsNames.get(i))
+            newButton.id = i
+            newButton.setTextColor(1)
+            newButton.setTextSize(6F)
+            newButton.setTextAppearance(R.style.btnQuest)
+            newButton.setOnClickListener(null)
+            gridbtns.addView(newButton, layoutParams)
+        }
+
+        //val btnQuest1 = findViewById<TextView>(R.id.btn_qst1)
+//        val btnQuest2 = findViewById<TextView>(R.id.btn_qst2)
+//        val btnQuest3 = findViewById<TextView>(R.id.btn_qst3)
+//        val btnQuest4 = findViewById<TextView>(R.id.btn_qst4)
+//        val btnQuest5 = findViewById<TextView>(R.id.btn_qst5)
+//        val btnQuest6 = findViewById<TextView>(R.id.btn_qst6)
 
         val btnNotas = findViewById<Button>(R.id.btn_notas)
         val viewNotas = findViewById<View>(R.id.view_notas)
         val btnHistorico = findViewById<Button>(R.id.btn_historico)
         val viewHistorico = findViewById<View>(R.id.view_historico)
 
-        btnQuest1.setOnClickListener {
-            val i = Intent(this, AtividadeActivity::class.java)
-            startActivity(i)
-        }
+//        btnQuest1.setOnClickListener {
+//            val i = Intent(this, AtividadeActivity::class.java)
+//            startActivity(i)
+//        }
 
-        btnQuest2.setOnClickListener {
-            val i = Intent(this, AtividadeActivity::class.java)
-            startActivity(i)
-        }
-
-        btnQuest3.setOnClickListener {
-            val i = Intent(this, AtividadeActivity::class.java)
-            startActivity(i)
-        }
-
-        btnQuest4.setOnClickListener {
-            val i = Intent(this, AtividadeActivity::class.java)
-            startActivity(i)
-        }
-
-        btnQuest5.setOnClickListener {
-            val i = Intent(this, AtividadeActivity::class.java)
-            startActivity(i)
-        }
-
-        btnQuest6.setOnClickListener {
-            val i = Intent(this, AtividadeActivity::class.java)
-            startActivity(i)
-        }
+//        btnQuest2.setOnClickListener {
+//            val i = Intent(this, AtividadeActivity::class.java)
+//            startActivity(i)
+//        }
+//
+//        btnQuest3.setOnClickListener {
+//            val i = Intent(this, AtividadeActivity::class.java)
+//            startActivity(i)
+//        }
+//
+//        btnQuest4.setOnClickListener {
+//            val i = Intent(this, AtividadeActivity::class.java)
+//            startActivity(i)
+//        }
+//
+//        btnQuest5.setOnClickListener {
+//            val i = Intent(this, AtividadeActivity::class.java)
+//            startActivity(i)
+//        }
+//
+//        btnQuest6.setOnClickListener {
+//            val i = Intent(this, AtividadeActivity::class.java)
+//            startActivity(i)
+//        }
 
         btnNotas.setOnClickListener {
             val i = Intent(this, NotasActivity::class.java)
