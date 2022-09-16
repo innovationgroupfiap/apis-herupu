@@ -1,6 +1,8 @@
 package br.com.innovationgroup.herupu
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -31,6 +33,8 @@ class HomeActivity : AppCompatActivity() {
         btnsNames.add("Atividade 2");
         btnsNames.add("Atividade 3");
         btnsNames.add("Atividade 4");
+        btnsNames.add("Atividade 5");
+        btnsNames.add("Atividade 6");
 
         val gridbtns = findViewById<GridLayout>(R.id.grid_atividades);
 
@@ -49,10 +53,15 @@ class HomeActivity : AppCompatActivity() {
             val newButton = Button(this)
             newButton.setText(btnsNames.get(i))
             newButton.id = i
-            newButton.setTextColor(1)
-            newButton.setTextSize(6F)
-            newButton.setTextAppearance(R.style.btnQuest)
-            newButton.setOnClickListener(null)
+            newButton.setTextColor(Color.parseColor("#44012c"))
+            newButton.setTextSize(13F)
+            newButton.setTypeface(null, Typeface.BOLD)
+            newButton.setBackgroundColor(Color.parseColor("#fdeefd"))
+
+            newButton.setOnClickListener {
+            val i = Intent(this, AtividadeActivity::class.java)
+            startActivity(i)
+        }
             gridbtns.addView(newButton, layoutParams)
         }
 

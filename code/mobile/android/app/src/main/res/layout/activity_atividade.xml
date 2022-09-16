@@ -67,91 +67,21 @@
         app:layout_constraintEnd_toEndOf="@+id/txv_descricao"
         app:layout_constraintStart_toStartOf="@+id/txv_descricao" />
 
-    <ImageView
-        android:id="@+id/img_cachorro"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
+    <GridLayout
+        android:id="@+id/grid_atividade_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:stretchMode="columnWidth"
+        android:rowCount="2"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="@id/edt_numb"
         app:layout_constraintTop_toBottomOf="@+id/edt_numb"
-        app:srcCompat="@drawable/sapo" />
+        tools:context=".GridXMLActivity">
 
-    <EditText
-        android:id="@+id/edt_img_1"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:hint="Digite Aqui"
-        android:textColorHint="#44012c"
-        android:backgroundTint="#44012c"
-        app:layout_constraintTop_toBottomOf="@+id/img_cachorro"
-        app:layout_constraintStart_toStartOf="@id/img_cachorro"
-        app:layout_constraintEnd_toEndOf="@id/img_cachorro" />
 
-    <ImageView
-        android:id="@+id/img_onca"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        app:layout_constraintTop_toTopOf="@+id/img_cachorro"
-        app:layout_constraintBottom_toBottomOf="@+id/img_cachorro"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="15dp"
-        app:srcCompat="@drawable/cachorro" />
-
-    <EditText
-        android:id="@+id/edt_img_2"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:hint="Digite Aqui"
-        android:textColorHint="#44012c"
-        android:backgroundTint="#44012c"
-        app:layout_constraintTop_toBottomOf="@+id/img_onca"
-        app:layout_constraintStart_toStartOf="@id/img_onca"
-        app:layout_constraintEnd_toEndOf="@id/img_onca" />
-
-    <ImageView
-        android:id="@+id/img_tucano"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="50dp"
-        android:adjustViewBounds="false"
-        android:scaleY="1.1"
-        app:layout_constraintEnd_toEndOf="@+id/img_cachorro"
-        app:layout_constraintStart_toStartOf="@id/img_cachorro"
-        app:layout_constraintTop_toBottomOf="@+id/img_cachorro"
-        app:srcCompat="@drawable/tucano" />
-
-    <EditText
-        android:id="@+id/edt_img_3"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:hint="Digite Aqui"
-        android:textColorHint="#44012c"
-        android:backgroundTint="#44012c"
-        app:layout_constraintTop_toBottomOf="@+id/img_tucano"
-        app:layout_constraintStart_toStartOf="@id/img_tucano"
-        app:layout_constraintEnd_toEndOf="@id/img_tucano" />
-
-    <ImageView
-        android:id="@+id/img_urso"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        app:layout_constraintTop_toTopOf="@+id/img_tucano"
-        app:layout_constraintBottom_toBottomOf="@+id/img_tucano"
-        app:layout_constraintStart_toStartOf="@id/img_onca"
-        app:layout_constraintEnd_toEndOf="@id/img_onca"
-        app:srcCompat="@drawable/tigre" />
-
-    <EditText
-        android:id="@+id/edt_img_4"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:hint="Digite Aqui"
-        android:textColorHint="#44012c"
-        android:backgroundTint="#44012c"
-        app:layout_constraintTop_toBottomOf="@+id/img_urso"
-        app:layout_constraintStart_toStartOf="@id/img_urso"
-        app:layout_constraintEnd_toEndOf="@id/img_urso" />
+    </GridLayout>
 
     <Button
         android:id="@+id/btn_prox"
@@ -160,7 +90,7 @@
         android:layout_height="wrap_content"
         android:text="Próximo"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/edt_img_3"
+        app:layout_constraintTop_toBottomOf="@id/grid_atividade_item"
         android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
