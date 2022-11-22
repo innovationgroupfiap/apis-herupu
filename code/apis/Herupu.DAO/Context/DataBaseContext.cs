@@ -11,7 +11,7 @@ namespace Herupu.DAL.Context
         public DbSet<Atividade> Atividade { get; set; }
         public DbSet<AtividadeItem> AtividadeItem { get; set; }
 
-        public DataBaseContext() 
+        public DataBaseContext()
         {
             //Database.EnsureDeleted();
             Database.EnsureCreated();
@@ -35,14 +35,23 @@ namespace Herupu.DAL.Context
             modelBuilder.Entity<AtividadeItem>().ToTable("T_ATIVIDADE_ITEM");
 
             modelBuilder.Entity<AtividadeItem>()
-                       .HasOne<Atividade>()
-                       .WithMany()
-                       .HasForeignKey(p => p.IdAtividade);
+                .HasOne(e => e.Atividade)
+                .WithMany(c => c.ItensAtividade)
+                .HasForeignKey(fk => fk.IdAtividade)
+                .IsRequired();
 
             modelBuilder.Entity<HistoricoAluno>()
                 .HasOne<Aluno>()
-                .WithMany()
-                .HasForeignKey(p => p.IdAluno);
+                .WithMany(c => c.HistoricoAlunos)
+                .HasForeignKey(fk => fk.IdAluno)
+                .IsRequired();
+
+
+            modelBuilder.Entity<HistoricoAluno>()
+                    .HasOne<AtividadeItem>()
+                    .WithMany(c => c.HistoricoAlunos)
+                    .HasForeignKey(fk => fk.IdItemAtividade)
+                    .IsRequired();
         }
     }
 }

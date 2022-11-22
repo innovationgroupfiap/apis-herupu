@@ -24,5 +24,9 @@ namespace Herupu.DAO.Entidades
         [Required(ErrorMessage = "Id do Aluno obrigatório!")]
         [Display(Name = "Id do Aluno:")]
         public int IdAluno { get; set; }
+
+        public Aluno Aluno { get; set; }
+        public AtividadeItem AtividadeItem { get; set; }
+
     }
 }

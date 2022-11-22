@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Herupu.DAO.Entidades.Atividade>
+
+@{
+    ViewData["Title"] = "Atividades - Lista";
+}
+<p>
+    <a asp-action="Create">Nova</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instrucao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdadeSugerida)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instrucao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdadeSugerida)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdAtividade">Alterar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdAtividade">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdAtividade">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

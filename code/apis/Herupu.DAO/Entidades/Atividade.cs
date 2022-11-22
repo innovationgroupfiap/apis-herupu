@@ -32,10 +32,13 @@ namespace Herupu.DAO.Entidades
         public string Instrucao { get; set; }
 
         [Column("IDADE_SUG_ATIVIDADE")]
+        [Display(Name = "Idade Sugerida:")]
         public int IdadeSugerida { get; set; }
 
-        //[JsonIgnore]
-        //[NotMapped]
+
         //public IList<AtividadeItem> AtividadeItens { get; set; }
+        [JsonIgnore]
+        [NotMapped]
+        public ICollection<AtividadeItem>? ItensAtividade { get; set; }
     }
 }

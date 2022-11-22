@@ -1,0 +1,41 @@
+﻿@model Herupu.DAO.Entidades.AtividadeItem
+
+@{
+    ViewData["Title"] = "Aprendizado Atividade - Apagar";
+}
+<h4>Você tem certeza que deseja apagar este registro?</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Atividade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Atividade.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pergunta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pergunta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Resposta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Resposta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Detalhe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Detalhe)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdAtividadeItem" />
+        <input type="submit" value="Apagar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>

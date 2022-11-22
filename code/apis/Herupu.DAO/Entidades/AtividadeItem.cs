@@ -23,13 +23,20 @@ namespace Herupu.DAO.Entidades
         [Column("RESPOSTA_ITEM")]
         public string Resposta { get; set; }
 
-        [Required(ErrorMessage = "Detalhe obrigatório!")]
         [StringLength(500, ErrorMessage = "O detalhe da atividade deve ter no máximo 500 caracteres")]
+        [DataType(DataType.MultilineText)]
         [Display(Name = "Detalhe:")]
         [Column("DETALHE_RESP_ITEM")]
-        public string Detalhe { get; set; }
+        public string? Detalhe { get; set; }
 
+        public Atividade? Atividade { get; set; }
+
+        [Required(ErrorMessage = "Atividade obrigatória!")]
+        [Display(Name = "Atividade:")]
         public int IdAtividade { get; set; }
 
+        [JsonIgnore]
+        [NotMapped]
+        public ICollection<HistoricoAluno>? HistoricoAlunos { get; set; }
     }
 }
