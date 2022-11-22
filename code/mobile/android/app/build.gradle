@@ -6,6 +6,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\dev\\herupu\\code\\mobile\\AndroidKeys\\HerupuPub.jks')
+            storePassword '53QhN#5?62<%>gy@)7sa'
+            keyAlias 'HerupuPub'
+            keyPassword '53QhN#5?62<%>gy@)7sa'
+        }
+    }
     compileSdk 32
 
     defaultConfig {
@@ -22,6 +30,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {

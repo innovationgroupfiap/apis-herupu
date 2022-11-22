@@ -90,6 +90,7 @@
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/edt_senha_cadastro"
         app:layout_constraintEnd_toEndOf="@id/edt_senha_cadastro"
+        android:textColor="#fdeefd"
         android:backgroundTint="#44012c"
         />
 
